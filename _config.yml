@@ -1,0 +1,10 @@
+# Site settings
+title: the human experiment
+email: atcktlgrm@gmail.com
+description: the human experiment
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://the-human-experiment.yourdomain.com" # the base hostname & protocol for your site
+github_username:  the-human-experiment
+
+# Build settings
+markdown: kramdown
