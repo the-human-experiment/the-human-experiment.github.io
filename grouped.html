@@ -1,0 +1,36 @@
+---
+layout: default
+title: "grouped"
+---
+
+<div class="home">
+
+  {% assign groups = site.posts | group_by:"group" %}
+
+{% for group in groups %}
+
+  {% if group.name != "" %}
+
+  <h2>{{ group.name }}</h2>
+
+  <ul class="post-list">
+
+      {% assign posts = group.items | sort: "part" %}
+
+      {% for post in posts %}
+
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <p>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{% if post.part %}{{post.part}}: {% endif %}{{ post.title }}</a>
+        </p>
+      </li>
+
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endfor %}
+
+</div>
